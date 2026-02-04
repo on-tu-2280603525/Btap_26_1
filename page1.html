@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Bài viết & Bình luận</title>
+    <style>
+        /* Yêu cầu: Hiển thị gạch ngang cho các post xóa mềm */
+        .is-deleted {
+            text-decoration: line-through;
+            color: #888;
+            background-color: #f9f9f9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .form-container {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Danh sách Bài viết (Posts)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tiêu đề</th>
+                <th>Lượt xem</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+    </table>
+
+    <div class="form-container">
+        <h3>Thêm/Cập nhật Bài viết</h3>
+        ID: <input type="text" id="id_txt" placeholder="Tự động" disabled />
+        Tiêu đề: <input type="text" id="title_txt" />
+        Lượt xem: <input type="text" id="views_txt" />
+        <input type="submit" value="Save Post" onclick="Save()" />
+    </div>
+
+    <hr>
+
+    <h2>Danh sách Bình luận (Comments)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nội dung</th>
+                <th>Post ID</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody id="comment-table-body">
+        </tbody>
+    </table>
+
+    <div class="form-container">
+        <h3>Thêm Bình luận mới</h3>
+        Nội dung: <input type="text" id="comment_text_txt" />
+        ID Bài viết: <input type="text" id="comment_postId_txt" />
+        <input type="button" value="Save Comment" onclick="SaveComment()" />
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
